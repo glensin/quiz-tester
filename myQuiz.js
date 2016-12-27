@@ -25,7 +25,7 @@ var question3 = {
 
 var question4 = {
   prompt: 'Where is Singapore?',
-  options: ['China', 'India', 'Japan', 'Singapore'],
+  options: ['Europe', 'America', 'NorthAsia', 'SouthEasAsia'],
   correctAnswerIndex: 4
 
 }
@@ -132,40 +132,3 @@ function playTurn(choice) {
             }
   }
 }
-
-// console.log(quiz.questions[quiz.currentQuestion].prompt);
-
-function display (){
-
- if (isGameOver===true) {
-    $('h1').text ("gameover" + whoWon())
-  }
-  else {
-    $('h1').text("Q" + (currentQuestion() + 1) + ")"
-    + quiz.questions[quiz.currentQuestion].prompt)
-$('button').eq(0).text(quiz.questions[quiz.currentQuestion].options[0])
-$('button').eq(1).text(quiz.questions[quiz.currentQuestion].options[1])
-$('button').eq(2).text(quiz.questions[quiz.currentQuestion].options[2])
-$('button').eq(3).text(quiz.questions[quiz.currentQuestion].options[3])
-}
-$('h3').eq(0).text("player 1:" + quiz.player1Points)
-$('h3').eq(1).text("player 2:" + quiz.player2Points)
-
-}
-
-$(document).ready (function game (){
-$('button').on('click', function(){
-if (isGameOver()) {
-  restart()
-}
-else {
-  currentPlayer=1
-  playTurn()
-}
-display()
-})
-display()
-})
-// $('button').on('click', function (){
-// playTurn();
-// })
